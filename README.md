@@ -1,1 +1,0 @@
-# UG - Przedmiot "Frontend Development"

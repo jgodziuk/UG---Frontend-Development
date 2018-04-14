@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+    .singleResult{
+        font-size:12px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        border-bottom:1px solid #d7d7d7;
+        cursor: pointer;
+    }
+    .singleResult:hover{
+        background: lightgrey;
+        border-bottom:1px solid #d7d7d7;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    p{
+        font-size:10px;
+        color:grey;
+        margin: 0;
+    }
+    a{
+        text-decoration: none;
+        color:black;
+    }
+</style>
+</head>
+<body>
+<div>
+<input id="q" placeholder="Wpisz fraze" style="width: 200px;padding:10px;" type="text"><br/>
+<div id="results" style="width: 100%;background-color:#f0f0f0;">
+    
+</div>
+</div>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/rxjs/bundles/rx.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

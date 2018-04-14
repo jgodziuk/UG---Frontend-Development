@@ -8,11 +8,16 @@ keyups.throttleTime(500).map(function(x){
         return searchWikipedia(x);
     })
     .do(function(x){
-        console.log(x);
+        //console.log(x);
     })
     .subscribe(function(x){
-        $('#results').text(x);
-    });(
+        console.log(x);
+        $('#results').empty();
+        x[1].forEach(function(value, index) { 
+            $('#results').append('<a href="'+x[3][index]+'"><div class="singleResult">'+value+'<br/><p>'+x[2][index]+'</p></div></a>');
+        });
+        
+    });
 
 function searchWikipedia(term) {
     return $.ajax({
