@@ -1,0 +1,7 @@
+<ul id="list" class="smartphone">
+  <li *ngFor="let smartphone of smartphonesList" (click)="onSelect(smartphone)" [class.selected]="smartphone === selected">
+    {{smartphone.brand}} {{smartphone.model}} <span class="smaller">{{smartphone.price}} PLN</span>
+  </li>
+</ul>
+
+<app-smartphones-details [smartphone]="selected"></app-smartphones-details>

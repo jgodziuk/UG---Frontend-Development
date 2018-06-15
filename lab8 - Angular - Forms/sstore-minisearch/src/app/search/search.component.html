@@ -1,0 +1,7 @@
+<input type="search" class="form-control" placeholder="Search..." [formControl]="searchField">
+
+<ul>
+  <li *ngFor="let search of searches; let i = index" (click)="showSmartphone(i)">{{ search.brand }}</li>
+</ul>
+
+<app-details [smartphone]="selectedSmartphone"></app-details>

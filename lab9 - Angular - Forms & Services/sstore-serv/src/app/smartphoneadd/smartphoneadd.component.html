@@ -1,0 +1,41 @@
+<form [formGroup]="addSmartphoneForm" (ngSubmit)="addSmartphone(addSmartphoneForm.value)">
+  <table>
+    <tr>
+      <td class="my-label">Brand:</td>
+      <td>
+          <input class="my-input" type="text" [formControl]="addSmartphoneForm.controls['brand']">
+      </td>
+    </tr>
+    <tr>
+      <td class="my-label">Model:</td>
+      <td>
+          <input class="my-input" type="text" [formControl]="addSmartphoneForm.controls['model']">
+      </td>
+    </tr>
+    <tr>
+        <td class="my-label">Price:</td>
+        <td>
+            <input class="my-input" type="text" [formControl]="addSmartphoneForm.controls['price']">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <button class="my-button" type="submit">Add smartphone</button>
+        </td>
+      </tr>
+  </table> 
+</form>
+
+<div *ngIf="brand.hasError('required')" class="validation-error">Brand is empty!</div>
+
+<div *ngIf="model.hasError('isUnique')" class="validation-error">Given model is already added!</div>
+
+<div *ngIf="model.hasError('required')" class="validation-error">Model is empty!</div>
+
+<div *ngIf="price.hasError('required')" class="validation-error">Price is empty!</div>
+
+<ul id="list" class="smartphone">
+  <li *ngFor="let smartphone of smartphonesList">
+    {{smartphone.brand}} {{smartphone.model}} <span class="smaller">{{smartphone.price}} PLN</span>
+  </li>
+</ul>

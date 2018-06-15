@@ -51,12 +51,32 @@ let x = 3;
 let someone = new Student('Adam', 'Malysz', 203040);
 */
 
-import { Smartphone } from "./smartphone";
-import { RankedSmartphone } from "./rankedsmartphone";
+import { Store } from "./model/store";
+import { Smartphone } from "./model/smartphone";
+import { SmartphoneRepo } from "./repository/smartphone.repo";
+import { StoreRepo } from "./repository/store.repo";
 
-let smartphone1 = new Smartphone('Samsung', 'Galaxy s9', 2018, 1000);
-let smartphone2 = new RankedSmartphone('Xiaomi', 'Redmi 4x', 2017, 200, 7);
+export class Main {
 
-console.log(smartphone1.getFullInfo());
-console.log(smartphone2.getFullInfo());
+    smartphoneRepo: SmartphoneRepo;
+    storeRepo: StoreRepo;
+
+    constructor() {
+        
+        this.smartphoneRepo = new SmartphoneRepo();
+        this.storeRepo = new StoreRepo();
+
+        this.smartphoneRepo.addSmartphone(new Smartphone("Samsung", "s8", 4000, true));
+        this.smartphoneRepo.addSmartphone(new Smartphone("Samsung", "a1", 2100, true));
+        this.smartphoneRepo.addSmartphone(new Smartphone("LG", "g6", 3200, false));
+
+        this.storeRepo.addStore(new Store("Gdańsk", "Piastowska", true));
+        this.storeRepo.addStore(new Store("Gdańsk", "Długa", true));
+
+        let storeA = this.storeRepo.getStoreByCity("Gdańsk");
+        let phoneA = this.smartphoneRepo.getSmartphoneByBrand("Samsung");
+
+        console.log("s");
+    }
+}
 

@@ -1,0 +1,21 @@
+#list{
+    list-style-type: none;
+    padding: 0 !important;
+}
+#list li{
+    text-decoration: none;
+    background: #6290bf;
+    margin: 6px;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    width: 400px;
+}
+
+#list li:hover{
+    background: #369;
+    transition: 0.3s
+}
+.smaller{
+    font-size:12px;
+}
