@@ -1,0 +1,9 @@
+<form [formGroup]="newSmartphone" (ngSubmit)="onSubmit(newSmartphone.value)" novalidate>
+      <label>Brand:</label>
+      <input type="text" formControlName="brand">
+      <label>Model:</label>
+      <input type="text" formControlName="model">
+      <label>Price:</label>
+      <input type="text" formControlName="price">
+    <button type="submit">Add</button>
+</form>

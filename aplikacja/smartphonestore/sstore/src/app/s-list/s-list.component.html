@@ -1,0 +1,7 @@
+<div id="listwrapper">
+  <ul class="slistUL">
+    <li class="lielement" *ngFor="let s of smartphonesList" [class.selected]="s === selectedSmartphone" (click)="onSelect(s)">
+      <span>{{s.brand}} </span><span>{{s.model}} </span><span>{{s.price}}</span> PLN
+    </li>
+  </ul>
+</div>
